@@ -80,19 +80,19 @@ def kospi():
 텍스트가 아닌 이미지로 답변을 보낼 때, 아래와 같은 방법으로 구현 (ex. 주사위)
 
 ```py
-	res = {
-    	    "version": "2.0",
-       		"template": {
-           		"outputs": [
-                	{
-                    	"simpleImage": {
-                        	"imageUrl": DiceUrl,
-                        	"altText": "주사위입니다."
-                    	}
-                	}
-            	]
-        	}
-    	}
+    res = {
+        "version": "2.0",
+        "template": {
+            "outputs": [
+                {
+                    "simpleImage": {
+                        "imageUrl": DiceUrl,
+			"altText": "주사위입니다."
+                    }
+                }
+            ]
+        }
+    }
 ```
 
 
