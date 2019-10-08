@@ -17,16 +17,14 @@ def fortune_cookie():
     ran = random.randint(0, 26)
     message = cookie.fortune(ran)
 
-
     res = normal_res.normal(message)
-    
     
     return jsonify(res)
 
 
 @app.route("/kospi", methods=["POST"])
 def kospi():
-    ##kospi값 받아오는 함수
+    ## kospi
 
     url = 'https://finance.naver.com/sise/'
     response = requests.get(url).text
@@ -36,13 +34,14 @@ def kospi():
     
     res = normal_res.normal(kospi)
     
+   
     
     return jsonify(res)
 
 
 @app.route("/lotto", methods=["POST"])
 def lotto():
-    ##lotto 추천 함수
+    ## lotto 추천 함수
 
     RandomNum = random.sample(range(1, 45), 6)
     itemLotto = ""
@@ -60,7 +59,7 @@ def lotto():
 
 @app.route("/finance", methods=["POST"])
 def finance():
-    ## 환율값 받아오는 함수
+    ## 환율
 
     url = 'https://finance.naver.com/marketindex/exchangeList.nhn'
 
@@ -94,7 +93,7 @@ def finance():
 
 @app.route("/NaverSearch", methods=["POST"])
 def NaverSearch():
-    ##naver 검색 상위 20
+    ## naver 검색 상위 20
 
     url = 'https://www.naver.com/'
     response = requests.get(url).text
@@ -127,7 +126,7 @@ def NaverSearch():
 
 @app.route("/dust", methods=["POST"])
 def dust():
-    ## 미세먼지 함수
+    ## 미세먼지
 
     servicekey = 'R1ELvH7uMyJXVpkSIagSFrNm9EXgOEVkkro57Ug7XlT8kG2ANOwfuNBns4Qp84hI%2BJazWajY0QSievkFUojUMg%3D%3D'
     url='http://openapi.airkorea.or.kr/openapi/services/rest/ArpltnInforInqireSvc/getCtprvnRltmMesureDnsty?sidoName='+'서울'+'&pageNo=2&numOfRows=1&ServiceKey='+servicekey+'&ver=1.3'
